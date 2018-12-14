@@ -3,7 +3,7 @@ const request = require('request');
 const cheerio = require('cheerio');
 const urlencode = require('urlencode');
 
-const token = '561994620:AAFMgAMrZZHB9B0zkg3prFpE1Ni6aS9KxxY';
+const token = '';
 
 const bot = new TelegramBot(token, {polling: true});
 
@@ -42,7 +42,7 @@ bot.on('message', (msg) => {
       var obj = JSON.parse(html);
       lat = obj.results[0].geometry.location.lat;
       lng = obj.results[0].geometry.location.lng;
-      url = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lng+'&appid=66fd1d85f8d4d1c628c756aa705d410e';
+      url = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lng+'&appid=';
       request(url, function(error, res, html) {
         obj = JSON.parse(html);
         var weather = obj.main.temp_max - obj.main.temp_min;
